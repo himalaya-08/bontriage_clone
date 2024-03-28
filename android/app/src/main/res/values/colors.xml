@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="notificationColor">#AFD794</color>
+    <color name="tonixNotificationColor">#0973BA</color>
+    <color name="splashColor">#D7EBC9</color>
+</resources>

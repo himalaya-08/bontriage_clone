@@ -1,0 +1,121 @@
+{
+  "project_info": {
+    "project_number": "564280065480",
+    "project_id": "bontriage-71c9d",
+    "storage_bucket": "bontriage-71c9d.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:564280065480:android:191f50f2aec95cdb5014fd",
+        "android_client_info": {
+          "package_name": "com.bontriage.mobile"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "564280065480-e76ghqojmr386i0g93agjgl7h3ltfp9s.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDyXnSvqbDlk80aHDIo-XOlS3X3Y_Cs33g"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "564280065480-bv2b08fmaqpmp6n6hciv13v6rr5fipkp.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "564280065480-3n931h5838j4263tu9ftbgmvlj8uuhmr.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.bontriage.tonix.mobile",
+                "app_store_id": "1584755612"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:564280065480:android:4dd2eda86ba97e965014fd",
+        "android_client_info": {
+          "package_name": "com.bontriage.mobile.debug"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "564280065480-e76ghqojmr386i0g93agjgl7h3ltfp9s.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDyXnSvqbDlk80aHDIo-XOlS3X3Y_Cs33g"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "564280065480-bv2b08fmaqpmp6n6hciv13v6rr5fipkp.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "564280065480-3n931h5838j4263tu9ftbgmvlj8uuhmr.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.bontriage.tonix.mobile",
+                "app_store_id": "1584755612"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:564280065480:android:381d84852c470e175014fd",
+        "android_client_info": {
+          "package_name": "com.bontriage.tonix.mobile"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "564280065480-e76ghqojmr386i0g93agjgl7h3ltfp9s.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDyXnSvqbDlk80aHDIo-XOlS3X3Y_Cs33g"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "564280065480-bv2b08fmaqpmp6n6hciv13v6rr5fipkp.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "564280065480-3n931h5838j4263tu9ftbgmvlj8uuhmr.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.bontriage.tonix.mobile",
+                "app_store_id": "1584755612"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

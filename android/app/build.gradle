@@ -1,0 +1,144 @@
+def localProperties = new Properties()
+def localPropertiesFile = rootProject.file('local.properties')
+if (localPropertiesFile.exists()) {
+    localPropertiesFile.withReader('UTF-8') { reader ->
+        localProperties.load(reader)
+    }
+}
+
+def flutterRoot = localProperties.getProperty('flutter.sdk')
+if (flutterRoot == null) {
+    throw new GradleException("Flutter SDK not found. Define location with flutter.sdk in the local.properties file.")
+}
+
+def flutterVersionCode = localProperties.getProperty('flutter.versionCode')
+if (flutterVersionCode == null) {
+    flutterVersionCode = '1'
+}
+
+def flutterVersionName = localProperties.getProperty('flutter.versionName')
+if (flutterVersionName == null) {
+    flutterVersionName = '1.0'
+}
+
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply from: "$flutterRoot/packages/flutter_tools/gradle/flutter.gradle"
+apply plugin: 'com.google.gms.google-services'
+
+def keystoreProperties = new Properties()
+def keystorePropertiesFile = rootProject.file('key.properties')
+if (keystorePropertiesFile.exists()) {
+    keystoreProperties.load(new FileInputStream(keystorePropertiesFile))
+}
+
+android {
+    compileSdk 34
+
+    sourceSets {
+        main.java.srcDirs += 'src/main/kotlin'
+    }
+
+    lintOptions {
+        //disable 'InvalidPackage' //TODO: this for release
+        checkReleaseBuilds false
+    }
+
+    defaultConfig {
+        applicationId "com.bontriage.mobile"
+        minSdk 28
+        targetSdk 34
+        versionCode 20
+        versionName "2.1.7"
+        multiDexEnabled true
+
+        ndk {
+            abiFilters 'armeabi-v7a', 'arm64-v8a', 'x86_64'
+        }
+
+
+    }
+
+    signingConfigs{
+        release{
+            keyAlias keystoreProperties['keyAlias']
+            keyPassword keystoreProperties['keyPassword']
+
+            storeFile file(keystoreProperties['storeFile'])
+            storePassword keystoreProperties['storePassword']
+        }
+    }
+
+    buildTypes {
+        release {
+            // Signing with the debug keys for now, so `flutter run --release` works.
+            signingConfig signingConfigs.release
+
+            minifyEnabled true
+            shrinkResources = true
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    flavorDimensions "default" // to overcome the flow with flavour dimension
+
+    productFlavors {
+        migraine_mentor {
+            applicationId "com.bontriage.mobile"
+            minSdk 28
+            targetSdk 34
+            versionCode 21
+            versionName "2.1.8"
+            multiDexEnabled true
+            resValue "string", "app_name", "MigraineMentor"
+            manifestPlaceholders = [appIcon: "@drawable/app_icon", notificationIcon: "@drawable/notification_icon", notificationColor: "@color/notificationColor"]
+
+            ndk {
+                abiFilters 'armeabi-v7a', 'arm64-v8a', 'x86_64'
+            }
+        }
+
+        migraine_mentor_debug {
+            applicationIdSuffix ".debug"
+            minSdk 28
+            targetSdk 34
+            versionCode 21
+            versionName "2.1.8"
+            multiDexEnabled true
+            resValue "string", "app_name", "MigraineMentor"
+            manifestPlaceholders = [appIcon: "@drawable/app_icon", notificationIcon: "@drawable/notification_icon", notificationColor: "@color/notificationColor"]
+
+            ndk {
+                abiFilters 'armeabi-v7a', 'arm64-v8a', 'x86_64'
+            }
+        }
+
+        tonix {
+            applicationId "com.bontriage.tonix.mobile"
+            minSdk 28
+            targetSdk 34
+            versionCode 4
+            versionName "1.1.0"
+            multiDexEnabled true
+            resValue "string", "app_name", "Tonix"
+            manifestPlaceholders = [appIcon: "@drawable/tonix_app_icon", notificationIcon: "@drawable/tonix_notification_icon", notificationColor: "@color/tonixNotificationColor"]
+
+            ndk {
+                abiFilters 'armeabi-v7a', 'arm64-v8a', 'x86_64'
+            }
+        }
+    }
+}
+
+flutter {
+    source '../..'
+}
+
+dependencies {
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.5.30"
+    implementation platform('com.google.firebase:firebase-bom:27.0.0')
+    implementation 'com.google.firebase:firebase-analytics-ktx'
+}
+
+apply plugin: 'com.google.gms.google-services'
+apply plugin: 'com.google.firebase.crashlytics'

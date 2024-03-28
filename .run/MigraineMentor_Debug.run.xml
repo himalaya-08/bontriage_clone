@@ -1,0 +1,7 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="MigraineMentor_Debug" type="FlutterRunConfigurationType" factoryName="Flutter">
+    <option name="buildFlavor" value="migraine_mentor_debug" />
+    <option name="filePath" value="$PROJECT_DIR$/lib/main_migraine_mentor.dart" />
+    <method v="2" />
+  </configuration>
+</component>
